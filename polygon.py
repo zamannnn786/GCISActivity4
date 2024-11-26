@@ -46,7 +46,6 @@ class polygon:
 
         """this function calculates the circumference of the polygon"""
      def calculate_circumference(self):
-        """calculates the circumference of the polygon as the sum of its sides."""
         return sum(self.Sides)
          #or (for simplified understanding)
          total = 0 
