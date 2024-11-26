@@ -48,4 +48,10 @@ print(poly1 != poly3)
 non_polygon = "Not a polygon"
 print(poly1 != non_polygon)
 
+"""this function tests the circumference calculation with floating-point sides."""
+def test_polygon_circumference_floating_sides():
+    poly = Polygon("Triangle", [3.5, 3.5, 3.5])  
+    circumference = poly.calculate_circumference()  
+    expected = 10.5  
+    assert circumference == pytest.approx(expected)  
 
