@@ -33,3 +33,16 @@ class polygon:
         print("The new sides for the polygon has been set")
 
 
+    def __eq__(self, other):
+        """checks if two polygons are equal."""
+        if type(self) == type(other):
+            return self.NameOfPolygon == other.NameOfPolygon and self.Sides == other.Sides
+        else:
+            return None
+        
+
+    def __ne__(self, other):
+        """Check if two polygons are not equal."""
+        return not self.__eq__(other)
+
+
