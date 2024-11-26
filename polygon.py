@@ -40,9 +40,19 @@ class polygon:
         else:
             return None
         
-
     def __ne__(self, other):
         """Check if two polygons are not equal."""
         return not self.__eq__(other)
+
+        """this function calculates the circumference of the polygon"""
+     def calculate_circumference(self):
+        """calculates the circumference of the polygon as the sum of its sides."""
+        return sum(self.Sides)
+         #or (for simplified understanding)
+         total = 0 
+         for side in self.Sides:  
+            total += side  
+         return total  
+
 
 
