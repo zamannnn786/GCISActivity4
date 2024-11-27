@@ -35,13 +35,17 @@ def test_set_sides():
     assert testpoly.Sides == [5, 5, 5]
 
 """this function tests for equality"""
-poly1 = Polygon("Triangle", [3, 3, 3])
-poly2 = Polygon("Triangle", [3, 3, 3])
+poly1 = polygon("Triangle", [3, 3, 3])
+poly2 = polygon("Triangle", [3, 3, 3])
 print(poly1 == poly2)  
 
 """this function tests for inequality"""
-poly3 = Polygon("Square", [4, 4, 4, 4])
+poly3 = polygon("Square", [4, 4, 4, 4])
 print(poly1 != poly3) 
+
+def test_polygon_str():
+    testpoly = polygon("Triangle", [3, 3, 3])
+    assert str(testpoly) == "Triangle with sides: [3, 3, 3]"
 
 #optional
 """this function tests with a non-polygon"""
@@ -50,8 +54,9 @@ print(poly1 != non_polygon)
 
 """this function tests the circumference calculation with floating-point sides."""
 def test_polygon_circumference_floating_sides():
-    poly = Polygon("Triangle", [3.5, 3.5, 3.5])  
+    poly = polygon("Triangle", [3.5, 3.5, 3.5])  
     circumference = poly.calculate_circumference()  
     expected = 10.5  
     assert circumference == pytest.approx(expected)  
+
 

@@ -32,26 +32,54 @@ class polygon:
         self.Sides = NewList
         print("The new sides for the polygon has been set")
 
-
+    """checks if two polygons are equal."""
+    
     def __eq__(self, other):
-        """checks if two polygons are equal."""
         if type(self) == type(other):
             return self.NameOfPolygon == other.NameOfPolygon and self.Sides == other.Sides
         else:
             return None
         
+    """Check if two polygons are not equal."""
+
     def __ne__(self, other):
-        """Check if two polygons are not equal."""
         return not self.__eq__(other)
 
-        """this function calculates the circumference of the polygon"""
-     def calculate_circumference(self):
+    """this function calculates the circumference of the polygon"""
+
+    def calculate_circumference(self):
         return sum(self.Sides)
          #or (for simplified understanding)
-         total = 0 
-         for side in self.Sides:  
-            total += side  
-         return total  
+        #total = 0 
+        #for side in self.Sides:  
+        #    total += side  
+        #return total  
+
+    """This function returns the string representation of the polygon""" 
+
+    def __str__(self):
+        return str(self.NameOfPolygon) + " with sides: " + str(self.Sides)
+    
+    
+    def main():
+        # Instantiate three Polygon objects
+        triangle = polygon("Triangle", [3, 3, 3])
+        square = polygon("Square", [4, 4, 4, 4])
+        hexagon = polygon("Hexagon", [6, 6, 6, 6, 6, 6])
+
+        # Print string representation and calculated circumference
+        print(triangle)
+        print("Circumference:", triangle.calculate_circumference())
+
+        print(square)
+        print("Circumference:", square.calculate_circumference())
+
+        print(hexagon)
+        print("Circumference:", hexagon.calculate_circumference())
+
+    if __name__ == "__main__":
+        main()
+
 
 
 
